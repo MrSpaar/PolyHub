@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table id="desktop">
+    <tr>
+        <td class="header">
+            {% if cwd %}
+            <a href="/linux/{{ parent }}">⬅</a> /{{ cwd }}
+            {% endif %}
+        </td>
+
+        <td class="header">
+            Fichier {% if file_name %} {{ file_name }} {% endif %}
+        </td>
+    </tr>
+
+    <tr>
+        <td class="content" id="explorer" rowspan="3">
+            <div class="container">
+                {% for name, path in content.items() %}
+                    <a href="{{ path }}">{{ name }}</a><br>
+                {% endfor %}
+            </div>
+        </td>
+
+        <td class="content" id="editor" colspan="2">
+            <div class="container">
+                {% if file_content %}
+                    <textarea name="command">{{ file_content }}</textarea>
+                {% else %}
+                    <span>Aucun contenu à afficher</span>
+                {% endif %}
+            </div>
+        </td>
+    </tr>
+</table>
+{% endblock %}

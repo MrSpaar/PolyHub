@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PolyHub</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PolyHub" />
+    <meta property="og:description" content="Un mystérieux site..." />
+    <meta property="og:url" content="https://polyhub.fr/" />
+    <meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fmartz90%2Fcircle%2F512%2Fubuntu-icon.png&f=1&nofb=1" />
+    <meta content="#ff6c0e" data-react-helmet="true" name="theme-color" />
+
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script defer src="https://kit.fontawesome.com/c133775852.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="https://polyhub.fr/"><i class="fab fa-ubuntu"></i> PolyHub</a>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash"><span>{{ message }}</span></div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form name="test" id="test" method="post">
+            <input type="submit" id="logout" name="logout" style="display: none">
+            <label for="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></label>
+        </form>
+    </header>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

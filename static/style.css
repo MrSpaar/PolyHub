@@ -1,0 +1,191 @@
+/* ######################################################### */
+
+:root {
+    --light-gray: lightgray;
+    --dark-gray: #7f7d7d;
+    --background: #181A1B;
+    --header: #494F52;
+    --border: 2px solid lightgray;
+    --transition: color .2s;
+}
+
+::-webkit-file-upload-button {display: none}
+::-webkit-scrollbar {width: 5px;}
+::-webkit-scrollbar-thumb {background: var(--dark-gray)}
+::-webkit-scrollbar-thumb:hover {background: #555}
+
+body {
+    background-color: var(--background);
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+* {
+    text-decoration: none;
+    outline: none;
+    color: var(--light-gray);
+    font-weight: bold;
+}
+
+a {
+    color: var(--light-gray);
+    transition: var(--transition);
+}
+
+a:hover, label[for=file]:hover {
+    color: var(--dark-gray)
+}
+
+input[type="text"] {
+    font-size: 16px;
+}
+
+/* ######################################################### */
+
+header {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    font-size: 1.5rem;
+    padding-left: .75rem;
+    background-color: var(--header);
+}
+
+header label {
+    padding-left: 91vw;
+}
+
+header i {
+    transition: color .2s;
+}
+
+header i:hover {
+    color: var(--dark-gray);
+}
+
+/* ######################################################### */
+
+.flash {
+    z-index: 1;
+    padding: 5px;
+    margin-left: 84vh;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    border-radius: .3rem;
+    background-color: #FF3333;
+    animation-name: popup;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes popup {
+    0% {opacity: 0}
+    50% {opacity: 100%}
+    100% {opacity: 0}
+}
+
+/* ######################################################### */
+
+#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+#login input {
+    border: none;
+    border-radius: .3rem;
+    font-size: 1.25rem;
+    background-color: var(--header);
+    padding: 5px;
+}
+
+#login input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    transition: background-color .2s, color .2s;
+}
+
+#login input[type="submit"]:hover {
+    color: var(--background);
+    background-color: var(--light-gray);
+}
+
+#login label {
+    display: block;
+    padding: 10px 0;
+}
+
+/* ######################################################### */
+
+table {
+    height: 94vh;
+    width: calc(100% - 1px);
+    border-collapse: collapse;
+}
+
+td {
+    border: var(--border);
+}
+
+.header {
+    height: 3vh;
+    padding-left: 10px;
+    vertical-align: center;
+    color: var(--dark-gray);
+}
+
+.header form {
+    display: inline;
+}
+
+.header span {
+    color: var(--dark-gray);
+}
+
+.header i {
+    float: right;
+    display: flex;
+    padding-right: 10px;
+    transition: var(--transition);
+}
+
+.header a:hover, .header i:hover {
+    color: var(--dark-gray);
+}
+
+.container {
+    overflow: auto;
+}
+
+.content {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.content p {
+    margin: 0;
+}
+
+.content textarea {
+    border: none;
+    resize: none;
+    width: 99%;
+    height: 87vh;
+    font-size: 14px;
+    background-color: var(--background);
+}
+
+#explorer {
+    width: 40vw;
+}
+
+#explorer .container {
+    max-height: 88vh;
+}
+
